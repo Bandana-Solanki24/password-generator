@@ -18,6 +18,16 @@ function generatePassword() {
   }
   passwordBox.value = password;
 }
+
+async function copyText() {
+  let text = passwordBox.value;
+  try {
+    await navigator.clipboard.writeText(text);
+    console.log("Content copied to clipboard", text);
+  } catch (err) {
+    console.error("Failed to copy: ", err);
+  }
+}
 // function generatePassword() {
 //   let password = "";
 //   var length = 8,
